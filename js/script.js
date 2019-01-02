@@ -34,4 +34,30 @@ $(document).ready(function () {
     })
   }
 
+  // Drag and drop functionality
+  function handleFileSelect(event) {
+    // Prevent default behavior (Prevent file from being opened)
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    let files = event.dataTransfer.files; // create fileList object.
+    let reader = new FileReader();  
+    reader.onload = function(event) {            
+         document.getElementById('text-display').value = event.target.result;
+    }        
+    reader.readAsText(files[0],"UTF-8");
+  }
+
+  function handleDragOver(event) {
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault();
+
+    // Explicitly show this is a copy.
+    event.dataTransfer.dropEffect = 'copy'; 
+  }
+
+  // Setup the dnd listeners.
+  let dropArea = document.getElementById('text-display');
+  dropArea.addEventListener('dragover', handleDragOver, false);
+  dropArea.addEventListener('drop', handleFileSelect, false);
 });
