@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
   document.getElementById('js-upload-files').addEventListener('change', getFile);
 
   function getFile(event) {
