@@ -50,37 +50,19 @@
 					<a class="nav-link" href="#">About </a>
 				</li>
 
-				<!-- Drop Down Tab -->
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-					 aria-haspopup="true" aria-expanded="false">
-						Dropdown
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Action</a>
-						<a class="dropdown-item" href="#">Another action</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Something else here</a>
-					</div>
-				</li>
-
 				<!-- Acount Tab -->
 				<li class="nav-item">
 					<a class="nav-link" href="#">Account </a>
 				</li>
 			</ul>
-
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-				<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-			</form>
 		</div>
 	</nav>
 
 	<div class="container-fluid">
-		<!-- Example single danger button -->
+		<h3>Upload a file from your computer</h3>
+		<!-- change fonts dropdown -->
 		<div class="btn-group">
-			<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+			<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true"
 			 aria-expanded="false">
 				Fonts
 			</button>
@@ -96,14 +78,16 @@
 				<button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
 			</div>
 		</div>
-		<div class="panel-body">
-			<h3>Upload a file from your computer</h3>
-			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-				<div class="form-inline">
+
+		<div class="d-inline-block">
+			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form" class="form-inline">
+				<!-- upload file button -->
+				<div class="border border-secondary">
 					<div class="form-group">
 						<input type="file" name="files[]" id="js-upload-files">
 					</div>
 				</div>
+				<!-- download button -->
 				<div>
 					<a id="button1" href="" download="YourConvertedFile.txt">
 						<button type="button" class="btn btn-sm btn-primary">Download</button>
@@ -112,12 +96,17 @@
 			</form>
 		</div>
 
+		<!-- text area -->
+		<hr class="my-4">
 		<div class="container">
-		<textarea id="text-display" class="form-control text-center" rows="20">
+			<textarea id="text-display" class="form-control" rows="20">
         Copy and paste, upload, or drag and drop files for font conversion.
     </textarea>
-	</div>
-	<script src="js/change-font.js"></script>
+		</div>
+
+		<!-- JS for font converting function -->
+		<script src="js/change-font.js"></script>
+
 </body>
 
 </html>
