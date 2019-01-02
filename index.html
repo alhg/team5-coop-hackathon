@@ -5,7 +5,6 @@
 	<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 		 crossorigin="anonymous">
@@ -17,8 +16,10 @@
       crossorigin="anonymous"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"></script>
+      <script src="js/change-font.js"></script>
       <script src="./js/jquery-3.3.1.js"></script>
       <script src="./js/script.js"></script>
+      <link rel="stylesheet" href="css/index.css">
 		<title>Dsylexia Font Converter</title>
 </head>
 
@@ -83,8 +84,8 @@
         </button>
         <div class="dropdown-menu">
           <h6 class="dropdown-header">Made for Dyslexia Fonts</h6>
-          <button class="dropdown-item" type="button">OpenDyslexia Regular</button>
-          <button class="dropdown-item" type="button">OpenDyslexia Monospace</button>
+          <button id='change-od-reg-btn' class="dropdown-item" type="button">OpenDyslexia Regular</button>
+          <button id='change-od-mono-btn' class="dropdown-item" type="button">OpenDyslexia Monospace</button>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Dyslexia Friendly Fonts</h6>
           <button class="dropdown-item" type="button">Arial</button>
@@ -93,6 +94,11 @@
           <button class="dropdown-item" type="button">Verdana</button>
         </div>
       </div>
+      <textarea id='text-display' class="form-control" rows="20">
+          Vestibulum leo est, vulputate sit amet cursus ut, malesuada venenatis nibh. Ut ut risus auctor, venenatis metus eu, eleifend enim. Phasellus ac quam et elit dignissim dapibus. Etiam id neque efficitur, luctus diam sit amet, gravida ante. Vivamus interdum, eros vel mollis semper, magna diam placerat sapien, et mattis nunc purus sed augue. Integer malesuada ante sit amet pellentesque egestas. Aenean varius, massa in ultricies lacinia, erat diam vehicula quam, eu ultricies lorem purus vitae arcu. Sed ac placerat nunc. Nunc sit amet semper enim. Proin quis ex sit amet dolor ultricies cursus in ut urna. Etiam blandit, leo sollicitudin lacinia elementum, ante est aliquet nisl, fermentum sagittis purus nisi vel nisl. Morbi accumsan egestas nibh sed luctus. Praesent accumsan aliquam risus, ac efficitur ligula eleifend vitae. Nam malesuada lacus quis bibendum vulputate. Sed id nisl et ex sagittis pellentesque.
+        </textarea>
+    </div>
+    <div class="container">
       <div class="panel-body">
         <h3>Upload a file from your computer</h3>
         <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
@@ -103,14 +109,7 @@
           </div>
         </form>
       </div>
-      <div class="output-text">
-        <textarea id="content-target" class="form-control" rows="20">
-            Vestibulum leo est, vulputate sit amet cursus ut, malesuada venenatis nibh. Ut ut risus auctor, venenatis metus eu, eleifend enim. Phasellus ac quam et elit dignissim dapibus. Etiam id neque efficitur, luctus diam sit amet, gravida ante. Vivamus interdum, eros vel mollis semper, magna diam placerat sapien, et mattis nunc purus sed augue. Integer malesuada ante sit amet pellentesque egestas. Aenean varius, massa in ultricies lacinia, erat diam vehicula quam, eu ultricies lorem purus vitae arcu. Sed ac placerat nunc. Nunc sit amet semper enim. Proin quis ex sit amet dolor ultricies cursus in ut urna. Etiam blandit, leo sollicitudin lacinia elementum, ante est aliquet nisl, fermentum sagittis purus nisi vel nisl. Morbi accumsan egestas nibh sed luctus. Praesent accumsan aliquam risus, ac efficitur ligula eleifend vitae. Nam malesuada lacus quis bibendum vulputate. Sed id nisl et ex sagittis pellentesque.
-        </textarea>
-      </div>
-
     </div>
-
 </body>
 
 </html>

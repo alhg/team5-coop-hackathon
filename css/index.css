@@ -1,19 +1,19 @@
 @font-face {
-    font-family: "OpenDylexia Regular";
+    font-family: "OpenDylexia-Regular";
     src: url("../fonts/OpenDyslexic-Regular.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: "OpenDylexia Mono";
+    font-family: "OpenDylexia-Mono";
     src: url("../fonts/OpenDyslexicMono-Regular.otf");
     font-weight: normal;
     font-style: normal;
 }
 
 textarea {
-    font-family: "OpenDylexia Regular";
+    font-family: "OpenDylexia-Regular";
     font-weight: normal;
     font-style: normal;
     overflow: auto;

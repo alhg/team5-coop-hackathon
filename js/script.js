@@ -4,7 +4,7 @@ $(document).ready(function() {
   function getFile(event) {
     const input = event.target
     if ('files' in input && input.files.length > 0) {
-      placeFileContent(document.getElementById('content-target'), input.files[0]);
+      placeFileContent(document.getElementById('text-display'), input.files[0]);
     }
   }
 
