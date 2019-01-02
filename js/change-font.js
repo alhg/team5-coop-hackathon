@@ -8,6 +8,7 @@ document.getElementById('change-helvetica-btn').onclick = changeFontToHelvetica;
 document.getElementById('change-verdana-btn').onclick = changeFontToVerdana;
 
 
+
 function changeFontToOpenDyslexiaRegular() {
     textarea.style.fontFamily = "OpenDylexia-Regular";
 }
@@ -15,6 +16,7 @@ function changeFontToOpenDyslexiaRegular() {
 function changeFontToOpenDyslexiaMono() {
     textarea.style.fontFamily = "OpenDylexia-Mono";
 }
+
 
 function changeFontToArial() {
     textarea.style.fontFamily = "Arial";

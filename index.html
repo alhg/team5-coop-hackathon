@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+
 	 crossorigin="anonymous">
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -20,9 +21,12 @@
 	<script src="./js/pdf.worker.js"></script>
 	<script src="./js/jquery-3.3.1.js"></script>
 	<script src="./js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 
 	<title>Dsylexia Font Converter</title>
 	<link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
@@ -32,23 +36,23 @@
 			<img src="./image/brandLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="Brand Logo">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-		<!-- Tabs -->
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
+	<!-- Tabs -->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
 
-				<!-- File Tab -->
-				<li class="nav-item">
-					<a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
-				</li>
+			<!-- File Tab -->
+			<li class="nav-item">
+				<a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
+			</li>
 
-				<!-- About Tab -->
-				<li class="nav-item">
-					<a class="nav-link" href="#">About </a>
-				</li>
+			<!-- About Tab -->
+			<li class="nav-item">
+				<a class="nav-link" href="#">About </a>
+			</li>
 
 				<!-- Acount Tab -->
 				<li class="nav-item">
@@ -93,6 +97,10 @@
 						<button type="button" class="btn btn-sm btn-primary">Download</button>
 					</a>
 				</div>
+        <h5>Use text to speech</h5>
+        <button type="button" name="play" id="play" class="btn btn-success">Play</button>
+        <button type="button" name="pause" id="pause" class="btn btn-warning">Pause</button>
+        <button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
 			</form>
 		</div>
 
