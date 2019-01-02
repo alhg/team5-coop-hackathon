@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+#downloadButton {
+  margin-top: 50pt;
+}
+
 textarea {
     font-family: "OpenDylexia-Regular";
     font-weight: normal;
