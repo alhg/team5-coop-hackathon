@@ -7,7 +7,29 @@ $(document).ready(function() {
     $('#button1').click(function(){
       console.log("downloaded!");
       var text = document.getElementById("text-display").value;
-    this.href = "data:text/plain;charset=UTF-8,"  + encodeURIComponent(text);
+
+      let doc = new jsPDF();
+
+      var y = 7;
+      var x = 3;
+      var textA = text.split("");
+      var str1 = document.getElementById('text-display');
+      var str2 = str1.style.fontFamily;
+      console.log(str1, str2);
+      console.log(textA);
+      for (var i = 0; i < textA.length; i++) {
+        if (y > 250) {
+          y = 5;
+          doc.addPage();
+        }
+        if (x > 200) {
+          x = 3;
+          y += 7;
+        }
+        doc.text(x, y, textA[i]);
+        x += 4;
+      }
+          doc.save('html.pdf');
     });
 
   document.getElementById('js-upload-files').addEventListener('change', getFile);
