@@ -64,8 +64,8 @@ $(document).ready(function () {
   // Drag and drop functionality
   function handleFileSelect(event) {
     // Prevent default behavior (Prevent file from being opened)
-    evt.stopPropagation();
-    evt.preventDefault();
+    event.stopPropagation();
+    event.preventDefault();
 
     let files = event.dataTransfer.files; // create fileList object.
     let reader = new FileReader();  
