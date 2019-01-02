@@ -1,8 +1,9 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#js-upload-submit').click(function(){
-      console.log("hello");
-    });
+  $('#js-upload-submit').click(function () {
+    console.log("hello");
+  });
+
 
     $('#button1').click(function(){
       console.log("downloaded!");
@@ -49,11 +50,66 @@ $(document).ready(function() {
 
   function readFileContent(file) {
     const reader = new FileReader();
+
     return new Promise((resolve, reject) => {
-      reader.onload = event => resolve(event.target.result);
       reader.onerror = error => reject(error);
-      reader.readAsText(file);
+
+      switch (file.name.split('.').pop().toLowerCase()) {
+        case "txt":
+          reader.onload = event => resolve(event.target.result);
+          reader.readAsText(file);
+          break;
+        case "pdf":
+          reader.onload = event => pdfjsLib.getDocument(new Uint8Array(event.target.result)).then(pdf => {
+            let result = "";
+            for (let i = 1; i <= pdf.numPages; i++) {
+              pdf.getPage(i).then(page => page.getTextContent().then(textContent => {
+                textContent = textContent.items;
+                let str = "";
+                for (let j = 0, lastY = textContent[0].transform[5]; j < textContent.length; j++) {
+                  if (lastY != textContent[j].transform[5]) {
+                    str += "\n";
+                    lastY = textContent[j].transform[5];
+                  }
+                  str += textContent[j].str;
+                }
+
+                if (page.pageNumber == pdf.numPages) {
+                  resolve(result + str);
+                } else {
+                  result += str + "\n";
+                }
+              }));
+            }
+          });
+          reader.readAsArrayBuffer(file);
+          break;
+        default:
+          alert("Unsupported extension!");
+      }
     })
   }
 
+  // Drag and drop functionality
+  function handleFileSelect(event) {
+    // Prevent default behavior (Prevent file from being opened)
+    event.stopPropagation();
+    event.preventDefault();
+
+    let files = event.dataTransfer.files; // create fileList object.
+    placeFileContent(document.getElementById('text-display'), files[0]);
+  }
+
+  function handleDragOver(event) {
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault();
+
+    // Explicitly show this is a copy.
+    event.dataTransfer.dropEffect = 'copy';
+  }
+
+  // Setup listeners.
+  let dropArea = document.getElementById('text-display');
+  dropArea.addEventListener('dragover', handleDragOver, false);
+  dropArea.addEventListener('drop', handleFileSelect, false);
 });
