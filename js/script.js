@@ -42,7 +42,7 @@ $(document).ready(function () {
               pdf.getPage(i).then(page => page.getTextContent().then(textContent => {
                 textContent = textContent.items;
                 let str = "";
-                for (let j = 0, lastY = -1; j < textContent.length; j++) {
+                for (let j = 0, lastY = textContent[0].transform[5]; j < textContent.length; j++) {
                   if (lastY != textContent[j].transform[5]) {
                     str += "\n";
                     lastY = textContent[j].transform[5];
