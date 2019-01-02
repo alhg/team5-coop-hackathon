@@ -38,6 +38,7 @@ $(document).ready(function () {
           break;
         case "pdf":
           reader.onload = event => pdfjsLib.getDocument(new Uint8Array(event.target.result)).then(pdf => {
+            let result = "";
             for (let i = 1; i <= pdf.numPages; i++) {
               pdf.getPage(i).then(page => page.getTextContent().then(textContent => {
                 textContent = textContent.items;
@@ -49,7 +50,12 @@ $(document).ready(function () {
                   }
                   str += textContent[j].str;
                 }
-                resolve(str);
+                
+                if (page.pageNumber == pdf.numPages) {
+                  resolve(result + str);
+                } else {
+                  result += str + "\n";
+                }
               }));
             }
           });
