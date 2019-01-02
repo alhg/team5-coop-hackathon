@@ -83,7 +83,7 @@ $(document).ready(function () {
     event.dataTransfer.dropEffect = 'copy'; 
   }
 
-  // Setup the dnd listeners.
+  // Setup listeners.
   let dropArea = document.getElementById('text-display');
   dropArea.addEventListener('dragover', handleDragOver, false);
   dropArea.addEventListener('drop', handleFileSelect, false);
