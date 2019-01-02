@@ -85,6 +85,10 @@ $(document).ready(function () {
           });
           reader.readAsArrayBuffer(file);
           break;
+        case "png":
+        case "jpg":
+          Tesseract.recognize(file).then(result => resolve(result.text));
+          break;
         default:
           alert("Unsupported extension!");
       }
