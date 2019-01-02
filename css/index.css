@@ -12,8 +12,10 @@
     font-style: normal;
 }
 
+
 textarea {
     font-family: "OpenDylexia Regular";
     font-weight: normal;
     font-style: normal;
+    overflow: auto;
 }
