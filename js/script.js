@@ -74,11 +74,7 @@ $(document).ready(function () {
     event.preventDefault();
 
     let files = event.dataTransfer.files; // create fileList object.
-    let reader = new FileReader();  
-    reader.onload = function(event) {            
-         document.getElementById('text-display').value = event.target.result;
-    }        
-    reader.readAsText(files[0],"UTF-8");
+    placeFileContent(document.getElementById('text-display'), files[0]);
   }
 
   function handleDragOver(event) {
