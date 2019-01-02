@@ -1,4 +1,15 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+  $('#js-upload-submit').click(function () {
+    console.log("hello");
+  });
+
+  $('#button1').click(function () {
+    console.log("downloaded!");
+    var text = document.getElementById("text-display").value;
+    this.href = "data:text/plain;charset=UTF-8," + encodeURIComponent(text);
+  });
+
   document.getElementById('js-upload-files').addEventListener('change', getFile);
 
   function getFile(event) {
@@ -49,4 +60,5 @@ $(document).ready(function() {
       }
     })
   }
+
 });
