@@ -16,4 +16,9 @@ textarea {
     font-family: "OpenDylexia Regular";
     font-weight: normal;
     font-style: normal;
+<<<<<<< HEAD
 }
+=======
+    overflow: auto;
+}
+>>>>>>> 18d7cd28249ac274e982e6ca338facb708df3329
