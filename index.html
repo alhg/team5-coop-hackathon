@@ -2,124 +2,131 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-    crossorigin="anonymous">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-    crossorigin="anonymous"></script>
-  <script src="./js/pdf.js"></script>
-  <script src="./js/pdf.worker.js"></script>
-  <script src="./js/jquery-3.3.1.js"></script>
-  <script src="./js/script.js"></script>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
 
-  <title>Dsylexia Font Converter</title>
-  <link rel="stylesheet" href="./css/index.css">
+	 crossorigin="anonymous">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+	 crossorigin="anonymous"></script>
+	<script src="./js/pdf.js"></script>
+	<script src="./js/pdf.worker.js"></script>
+	<script src="./js/jquery-3.3.1.js"></script>
+	<script src="./js/script.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+
+	<title>Dsylexia Font Converter</title>
+	<link rel="stylesheet" href="./css/index.css">
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <!-- Brand Logo -->
-    <a class="navbar-brand" href="#">
-      <img src="./image/brandLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="Brand Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<!-- Brand Logo -->
+		<a class="navbar-brand" href="#">
+			<img src="./image/brandLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="Brand Logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-    <!-- Tabs -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+	<!-- Tabs -->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
 
-        <!-- File Tab -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
-        </li>
+			<!-- File Tab -->
+			<li class="nav-item">
+				<a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
+			</li>
 
-        <!-- About Tab -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">About </a>
-        </li>
+			<!-- About Tab -->
+			<li class="nav-item">
+				<a class="nav-link" href="#">About </a>
+			</li>
 
-        <!-- Drop Down Tab -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
+			<!-- Drop Down Tab -->
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+				aria-haspopup="true" aria-expanded="false">
+				Dropdown
+			</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		</li>
 
-        <!-- Acount Tab -->
-        <li class="nav-item">
-          <a class="nav-link" href="#">Account </a>
-        </li>
-      </ul>
+		<!-- Acount Tab -->
+		<li class="nav-item">
+			<a class="nav-link" href="#">Account </a>
+		</li>
+	</ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
+	<form class="form-inline my-2 my-lg-0">
+		<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+	</form>
+</div>
+</nav>
 
-  <div class="container-fluid">
-    <!-- Example single danger button -->
-    <div class="btn-group">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-        aria-expanded="false">
-        Choose Font
-      </button>
-      <div class="dropdown-menu">
-        <h6 class="dropdown-header">Made for Dyslexia Fonts</h6>
-        <button id='change-od-reg-btn' class="dropdown-item" type="button">OpenDyslexia Regular</button>
-        <button id='change-od-mono-btn' class="dropdown-item" type="button">OpenDyslexia Monospace</button>
-        <div class="dropdown-divider"></div>
-        <h6 class="dropdown-header">Dyslexia Friendly Fonts</h6>
-        <button id='change-arial-btn' class="dropdown-item" type="button">Arial</button>
-        <button id='change-comic-sans-btn' class="dropdown-item" type="button">Comic Sans</button>
-        <button id='change-helvetica-btn' class="dropdown-item" type="button">Helvetica</button>
-        <button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
-      </div>
-    </div>
-    <div class="panel-body">
-      <h3>Upload a file from your computer</h3>
-      <form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
-        <div class="form-inline">
-          <div class="form-group">
-            <input type="file" name="files[]" id="js-upload-files">
-          </div>
-        </div>
-        <div>
-          <a id="button1" href="" download="YourConvertedFile.txt">
-            <button type="button" class="btn btn-sm btn-primary">Download</button>
-          </a>
-        </div>
-      </form>
-    </div>
-    <textarea id='text-display' class="form-control" rows="20">
-      Vestibulum leo est, vulputate sit amet cursus ut, malesuada venenatis nibh. Ut ut risus auctor, venenatis metus eu, eleifend enim. Phasellus ac quam et elit dignissim dapibus. Etiam id neque efficitur, luctus diam sit amet, gravida ante. Vivamus interdum, eros vel mollis semper, magna diam placerat sapien, et mattis nunc purus sed augue. Integer malesuada ante sit amet pellentesque egestas. Aenean varius, massa in ultricies lacinia, erat diam vehicula quam, eu ultricies lorem purus vitae arcu. Sed ac placerat nunc. Nunc sit amet semper enim. Proin quis ex sit amet dolor ultricies cursus in ut urna. Etiam blandit, leo sollicitudin lacinia elementum, ante est aliquet nisl, fermentum sagittis purus nisi vel nisl. Morbi accumsan egestas nibh sed luctus. Praesent accumsan aliquam risus, ac efficitur ligula eleifend vitae. Nam malesuada lacus quis bibendum vulputate. Sed id nisl et ex sagittis pellentesque.
+	<div class="container-fluid">
+		<!-- Example single danger button -->
+		<div class="btn-group">
+			<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+			 aria-expanded="false">
+				Fonts
+			</button>
+			<div class="dropdown-menu">
+				<h6 class="dropdown-header">Made for Dyslexia Fonts</h6>
+				<button id='change-od-reg-btn' class="dropdown-item" type="button">OpenDyslexia Regular</button>
+				<button id='change-od-mono-btn' class="dropdown-item" type="button">OpenDyslexia Monospace</button>
+				<div class="dropdown-divider"></div>
+				<h6 class="dropdown-header">Dyslexia Friendly Fonts</h6>
+				<button id='change-arial-btn' class="dropdown-item" type="button">Arial</button>
+				<button id='change-comic-sans-btn' class="dropdown-item" type="button">Comic Sans</button>
+				<button id='change-helvetica-btn' class="dropdown-item" type="button">Helvetica</button>
+				<button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
+			</div>
+		</div>
+		<div class="panel-body">
+			<h3>Upload a file from your computer</h3>
+			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="file" name="files[]" id="js-upload-files">
+					</div>
+				</div>
+				<div>
+					<a id="button1" href="" download="YourConvertedFile.txt">
+						<button type="button" class="btn btn-sm btn-primary">Download</button>
+					</a>
+				</div>
+        <h5>Text to speech</h5>
+        <button type="button" name="play" id="play" class="btn btn-success">Play</button>
+        <button type="button" name="pause" id="pause" class="btn btn-warning">Pause</button>
+        <button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
+        <script src="js/change-font.js"></script>
+			</form>
+		</div>
+
+		<div class="container">
+		<textarea id="text-display" class="form-control text-center" rows="20">
+        Copy and paste, upload, or drag and drop files for font conversion.
     </textarea>
-    <h5>Use text to speech</h5>
-    <button type="button" name="play" id="play" class="btn btn-success">Play</button>
-    <button type="button" name="pause" id="pause" class="btn btn-warning">Pause</button>
-    <button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
-  </div>
-  <script src="js/change-font.js"></script>
+	</div>
+	<script src="js/change-font.js"></script>
 </body>
 
 </html>
