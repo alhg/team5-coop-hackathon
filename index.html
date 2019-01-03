@@ -63,8 +63,8 @@
 	</nav>
 
 	<div class="container">
+		<!-- change font-family dropdown -->
 		<h4>Upload a file from your computer</h4>
-		<!-- change fonts dropdown -->
 		<div class="btn-group">
 			<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true"
 			 aria-expanded="false">
@@ -81,26 +81,32 @@
 				<button id='change-helvetica-btn' class="dropdown-item" type="button">Helvetica</button>
 				<button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
 			</div>
+			<!-- Change font size -->
+			<form class="form-inline border border-secondary m-1 bg-light">
+				<label>Font Size</label>
+				<input id="font-size-input" type="number" min="10" max="32" value="12">
+			</form>
 		</div>
+	</div>
 
-	<div class="d-inline-block">
-		<form action="" method="post" enctype="multipart/form-data" id="js-upload-form" class="form-inline">
-			<!-- upload file button -->
-			<div class="border border-secondary bg-info">
-				<div class="form-group">
-					<input type="file" name="files[]" id="js-upload-files">
+	<div class="container">
+		<div class="d-inline-block">
+			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form" class="form-inline">
+				<!-- upload file button -->
+				<div class="border border-secondary">
+					<div class="form-group">
+						<input type="file" name="files[]" id="js-upload-files">
+					</div>
 				</div>
-			</div>
-			<!-- download button -->
-			<div class="m-1">
-				<a id="button1" href="" download="YourConvertedFile.txt">
-					<button type="button" class="btn btn-sm btn-primary">Download</button>
-				</a>
-			</div>
-		</form>
+				<!-- download button -->
+				<div class="m-1">
+					<a id="button1" href="" download="YourConvertedFile.txt">
+						<button type="button" class="btn btn-sm btn-primary">Download</button>
+					</a>
+				</div>
+			</form>
+		</div>
 	</div>
-	</div>
-
 
 	<div class="container">
 		<h4>Use text to speech</h4>
@@ -112,9 +118,7 @@
 	<!-- text area -->
 	<hr class="my-4">
 	<div class="container">
-		<textarea id="text-display" class="form-control" rows="20">
-        	Copy and paste, upload, or drag and drop files for font conversion.
-    		</textarea>
+		<textarea id="text-display" class="form-control" rows="20">Copy and paste, upload, or drag and drop files for font conversion.</textarea>
 	</div>
 	</div>
 
