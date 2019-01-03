@@ -164,5 +164,4 @@ $(document).ready(function () {
   } else {
     alert("Current browser is not compatible with text to speech");
   }
-
 });
