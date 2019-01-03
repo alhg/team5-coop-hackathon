@@ -8,9 +8,14 @@ $(document).ready(function () {
   $('#button1').click(function () {
     console.log("downloaded!");
     var text = document.getElementById("text-display").value;
-
+    var textAreaDisplay = document.getElementById('text-display');
+    var yi = textAreaDisplay.style.fontSize;
+    var hi = yi.substring(0, 2);
+    var si = parseInt(hi, 10);
+    console.log(yi);
+    console.log(si);
     var doc = new jsPDF('p', 'in', 'letter'),
-      sizes = [14],
+      sizes = [si],
       fonts = [['Times', 'Roman']],
       font, size, lines,
       margin = 0.5,
@@ -22,11 +27,11 @@ $(document).ready(function () {
         size = sizes[i]
 
         lines = doc.setFont(font[0], font[1])
-          .setFontSize(size)
+          .setFontSize(si)
           .splitTextToSize(text, 7.5)
-        doc.text(0.5, verticalOffset + size / 72, lines)
+        doc.text(0.5, verticalOffset + si / 72, lines)
 
-        verticalOffset += (lines.length + 0.5) * size / 72
+        verticalOffset += (lines.length + 0.5) * si / 72
       }
     }
     console.log(text);
