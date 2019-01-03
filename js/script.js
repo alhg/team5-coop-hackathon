@@ -2,6 +2,7 @@ $(document).ready(function () {
   // Upload file functionality
   $('#js-upload-submit').click(function () {
     console.log("hello");
+    e.preventDefault();
   });
 
 
@@ -31,6 +32,7 @@ $(document).ready(function () {
     }
     console.log(text);
     doc.save('YourConvertedFile.pdf');
+    e.preventDefault();
   });
 
   document.getElementById('js-upload-files').addEventListener('change', getFile);
