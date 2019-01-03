@@ -11,10 +11,12 @@ document.getElementById('change-verdana-btn').onclick = changeFontToVerdana;
 
 function changeFontToOpenDyslexiaRegular() {
     textarea.style.fontFamily = "OpenDylexia-Regular";
+
 }
 
 function changeFontToOpenDyslexiaMono() {
     textarea.style.fontFamily = "OpenDylexia-Mono";
+
 }
 
 

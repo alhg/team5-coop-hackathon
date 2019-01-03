@@ -9,28 +9,28 @@ $(document).ready(function () {
       console.log("downloaded!");
       var text = document.getElementById("text-display").value;
 
-      let doc = new jsPDF();
+      var doc = new jsPDF('p', 'in', 'letter'),
+      sizes = [14],
+      fonts = [['Times', 'Roman']],
+      font, size, lines,
+      margin = 0.5,
+      verticalOffset = margin
 
-      var y = 7;
-      var x = 3;
-      var textA = text.split("");
-      var str1 = document.getElementById('text-display');
-      var str2 = str1.style.fontFamily;
-      console.log(str1, str2);
-      console.log(textA);
-      for (var i = 0; i < textA.length; i++) {
-        if (y > 250) {
-          y = 5;
-          doc.addPage();
-        }
-        if (x > 200) {
-          x = 3;
-          y += 7;
-        }
-        doc.text(x, y, textA[i]);
-        x += 4;
-      }
-          doc.save('html.pdf');
+  for (var i in fonts) {
+    if (fonts.hasOwnProperty(i)) {
+      font = fonts[i]
+      size = sizes[i]
+
+      lines = doc.setFont(font[0], font[1])
+      .setFontSize(size)
+      .splitTextToSize(text, 7.5)
+      doc.text(0.5, verticalOffset + size / 72, lines)
+
+      verticalOffset += (lines.length + 0.5) * size / 72
+    }
+  }
+  console.log(text);
+          doc.save('YourConvertedFile.pdf');
     });
 
   document.getElementById('js-upload-files').addEventListener('change', getFile);
