@@ -2,7 +2,6 @@ $(document).ready(function () {
   // Upload file functionality
   $('#js-upload-submit').click(function () {
     console.log("hello");
-    e.preventDefault();
   });
 
 
