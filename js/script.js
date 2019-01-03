@@ -95,10 +95,9 @@ $(document).ready(function () {
 		})
 	}
 
-	// Drag and drop functionality
+	// Drag and drop functionality 
 	function handleFileSelect(event) {
-		// Prevent default behavior (Prevent file from being opened)
-		event.stopPropagation();
+		event.stopPropagation(); // Prevent default behavior (Prevent file from being opened)
 		event.preventDefault();
 
 		let files = event.dataTransfer.files; // create fileList object.
@@ -107,14 +106,11 @@ $(document).ready(function () {
 	}
 
 	function handleDragOver(event) {
-		// Prevent default behavior (Prevent file from being opened)
-		event.preventDefault();
-
-		// Explicitly show this is a copy.
-		event.dataTransfer.dropEffect = 'copy';
+		event.preventDefault(); // Prevent default behavior (Prevent file from being opened)
+		event.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
 	}
 
-	// Setup listeners.
+	// Setup listeners
 	let dropArea = document.getElementById('text-display');
 	dropArea.addEventListener('dragover', handleDragOver, false);
 	dropArea.addEventListener('drop', handleFileSelect, false);
