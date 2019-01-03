@@ -17,30 +17,36 @@ function changeFontSize() {
 function changeFontToOpenDyslexiaRegular() {
     textAreaDisplay.style.fontFamily = "OpenDylexia-Regular";
     document.getElementById('dropDownFont').innerHTML = "OpenDyslexia Regular";
+    fontStr = "OpenDyslexic";
 }
 
 function changeFontToOpenDyslexiaMono() {
     textAreaDisplay.style.fontFamily = "OpenDylexia-Mono";
     document.getElementById('dropDownFont').innerHTML = "OpenDyslexia Monospace";
+    fontStr = "OpenDyslexicMono";
 }
 
 
 function changeFontToArial() {
     textAreaDisplay.style.fontFamily = "Arial";
     document.getElementById('dropDownFont').innerHTML = "Arial";
+    fontStr = "Arial";
 }
 
 function changeFontToComicSans() {
     textAreaDisplay.style.fontFamily = "Comic-Sans";
     document.getElementById('dropDownFont').innerHTML = "Comic-Sans";
+    fontStr = "ComicSans";
 }
 
 function changeFontToHelvetica() {
     textAreaDisplay.style.fontFamily = "Helvetica";
     document.getElementById('dropDownFont').innerHTML = "Helvetica";
+    fontStr = "Helvetica";
 }
 
 function changeFontToVerdana() {
     textAreaDisplay.style.fontFamily = "Verdana";
     document.getElementById('dropDownFont').innerHTML = "Verdana";
+    fontStr = "Verdana";
 }
