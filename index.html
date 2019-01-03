@@ -53,9 +53,9 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<h3>Upload a file from your computer</h3>
-		<!-- change fonts dropdown -->
+	<div class="container">
+		<!-- change font-family dropdown -->
+		<h4>Upload a file from your computer</h4>
 		<div class="btn-group">
 			<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true"
 			 aria-expanded="false" id="dropDownFont">
@@ -72,13 +72,15 @@
 				<button id='change-helvetica-btn' class="dropdown-item" type="button">Helvetica</button>
 				<button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
 			</div>
+			<!-- Change font size -->
+			<form class="form-inline border border-secondary m-1 bg-light">
+				<label>Font Size</label>
+				<input id="font-size-input" type="number" min="10" max="32" value="12">
+			</form>
 		</div>
+	</div>
 
-		<form class="form-inline">
-			<label>Font Size</label>
-			<input id="font-size-input" type="number" min="10" max="32" value="12">
-		</form>
-
+	<div class="container">
 		<div class="d-inline-block">
 			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form" class="form-inline">
 				<!-- upload file button -->
@@ -88,24 +90,30 @@
 					</div>
 				</div>
 				<!-- download button -->
-				<div>
-						<button type="button" class="btn btn-sm btn-primary" id="button1">Download</button>
+				<div class="m-1">
+					<a id="button1" href="" download="YourConvertedFile.txt">
+						<button type="button" class="btn btn-sm btn-primary">Download</button>
+					</a>
 				</div>
-				<h5>Use text to speech</h5>
-				<button type="button" name="play" id="play" class="btn btn-success">Play</button>
-				<button type="button" name="pause" id="pause" class="btn btn-warning">Pause</button>
-				<button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
 			</form>
 		</div>
-
-		<!-- text area -->
-		<hr class="my-4">
-		<div class="container">
-			<textarea id="text-display" class="form-control" rows="20">
-        	Copy and paste, upload, or drag and drop files for font conversion.
-    		</textarea>
-		</div>
 	</div>
+
+	<div class="container">
+		<h4>Use text to speech</h4>
+		<button type="button" name="play" id="play" class="btn btn-success">Play</button>
+		<button type="button" name="pause" id="pause" class="btn btn-warning">Pause</button>
+		<button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
+	</div>
+
+	<!-- text area -->
+	<hr class="my-4">
+	<div class="container">
+		<textarea id="text-display" class="form-control" rows="20">Copy and paste, upload, or drag and drop files for font conversion.</textarea>
+	</div>
+	</div>
+
+	<!-- JS for font converting function -->
 	<script src="js/change-font.js"></script>
 
 </body>
