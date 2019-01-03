@@ -2,7 +2,6 @@ $(document).ready(function () {
   // Upload file functionality
   $('#js-upload-submit').click(function () {
     console.log("hello");
-    e.preventDefault();
   });
 
 
@@ -129,12 +128,10 @@ $(document).ready(function () {
 
     /* references to the buttons */
     var playB = document.querySelector('#play');
-    var pauseB = document.querySelector('#pause');
     var stopB = document.querySelector('#stop');
 
     /* event handlers for the buttons */
     playB.addEventListener('click', onClickPlay);
-    pauseB.addEventListener('click', onClickPause);
     stopB.addEventListener('click', onClickStop);
 
     /* function for clicking the play button */
@@ -149,13 +146,10 @@ $(document).ready(function () {
         };
         synth.speak(utterance);
       }
-      if (synth.paused) { /* unpause/resume narration */
+      else if (synth.paused) { /* unpause/resume narration */
         synth.resume();
       }
-    }
-    /* function for clicking the pause button */
-    function onClickPause() {
-      if (synth.speaking && !synth.paused) { /* pause narration */
+      else if (synth.speaking && !synth.paused) { /* pause narration */
         synth.pause();
       }
     }
