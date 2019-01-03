@@ -33,6 +33,7 @@ $(document).ready(function () {
         doc.addFont('OpenDyslexicMono-Regular.ttf', 'OpenDyslexicMono', 'normal');
         break;
       case 'Arial':
+        doc.addFont('Arial', 'arial', 'normal');
       case 'Helvetica':
       case 'Verdana':
         break;
@@ -41,6 +42,7 @@ $(document).ready(function () {
     }
 
     lines = doc.setFont(font)
+      .setFontType('normal')
       .setFontSize(si)
       .splitTextToSize(text, 7.5);
     doc.text(0.5, verticalOffset + si / 72, lines);
