@@ -31,24 +31,26 @@
 </head>
 
 <body>
-	<nav id="navbarTop" class="navbar navbar-dark bg-primary navbar-inverse">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<!-- Brand Logo -->
 		<a class="navbar-brand" href="index.html">
-			<img src="./image/dhcLogo.png" width="auto" height="40" class="d-inline-block align-top" alt="Brand Logo">
+			<img src="./image/logoBig.png" width="200" height="60" class="d-inline-block align-top" alt="Brand Logo">
 		</a>
-		<div class="navbar-header">
-      <a class="navbar-brand" href="index.html">Dyslexic Font Converter</a>
-    </div>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
 		<!-- Tabs -->
-			<ul class="nav navbar-nav navbar-right">
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
 
 				<!-- File Tab -->
 				<li class="nav-item">
-					<a class="nav-link" href="about.html">About<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
-
+		</div>
 	</nav>
 
 	<div class="container">
@@ -103,21 +105,12 @@
 
 	<!-- text area -->
 	<div class="container">
-		<!-- instructions -->
-		<hr />
-		<p>The conversion currently handles: txt, pdf, png, and jpg files.</p>
-		<p>Insert your text using one of three options:</p>
-		<ol>
-			<li>Copy and paste directly into the text area</li>
-			<li>Upload using the choose file button</li>
-			<li>Drag and drop the file directly into the text area</li>
-		</ol>
 		<hr class="my-4">
-		<textarea id="text-display" class="form-control" rows="20" placeholder="Copy and paste, upload, or drag and drop files for font conversion."></textarea>
-		<!-- download button -->
-		<div class="m-1">
-				<button type="button" class="btn btn-sm btn-primary" id="button1">Download</button>
-		</div>
+		<textarea id="text-display" class="form-control" rows="20">Copy and paste, upload, or drag and drop .txt, .pdf, .jpg, or .png files for font conversion.</textarea>
+    <!-- download button -->
+    <div class="m-1">
+        <button type="button" class="btn btn-sm btn-primary" id="button1">Download</button>
+    </div>
 	</div>
 
 	<!-- JS for font converting function -->

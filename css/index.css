@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "OpenDylexia-Regular";
+    src: url("../fonts/OpenDyslexic-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "OpenDylexia-Mono";
+    src: url("../fonts/OpenDyslexicMono-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Comic-Sans";
+    src: url("../fonts/comic-sans.TTF");
+    font-weight: normal;
+    font-style: normal;
+}
+
+#downloadButton {
+  margin-top: 50pt;
+}
+
+* {
+    font-family: "OpenDylexia-Regular";
+}
+
+textarea {
+    font-family: "OpenDylexia-Regular";
+    font-weight: normal;
+    font-style: normal;
+    overflow: auto;
+    font-size: 12px;
+}
