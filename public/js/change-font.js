@@ -30,7 +30,7 @@ function changeFontToOpenDyslexiaMono() {
 function changeFontToArial() {
     textAreaDisplay.style.fontFamily = "Arial";
     document.getElementById('dropDownFont').innerHTML = "Arial";
-    fontStr = "Arial";
+    fontStr = "Ari";
 }
 
 function changeFontToComicSans() {
@@ -42,11 +42,11 @@ function changeFontToComicSans() {
 function changeFontToHelvetica() {
     textAreaDisplay.style.fontFamily = "Helvetica";
     document.getElementById('dropDownFont').innerHTML = "Helvetica";
-    fontStr = "Helvetica";
+    fontStr = "Hel";
 }
 
 function changeFontToVerdana() {
     textAreaDisplay.style.fontFamily = "Verdana";
     document.getElementById('dropDownFont').innerHTML = "Verdana";
-    fontStr = "Verdana";
+    fontStr = "Ver";
 }
