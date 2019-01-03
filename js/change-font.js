@@ -37,7 +37,7 @@ function changeFontToComicSans() {
 
 function changeFontToHelvetica() {
     textAreaDisplay.style.fontFamily = "Helvetica";
-    document.getElementById('dropDownFont').inerHTML = "Helvetica";
+    document.getElementById('dropDownFont').innerHTML = "Helvetica";
 }
 
 function changeFontToVerdana() {
