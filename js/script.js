@@ -1,37 +1,37 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Upload file functionality
-  $('#js-upload-submit').click(function () {
+  $('#js-upload-submit').click(function() {
     console.log("hello");
   });
 
 
-    $('#button1').click(function(){
-      console.log("downloaded!");
-      var text = document.getElementById("text-display").value;
+  $('#button1').click(function() {
+    console.log("downloaded!");
+    var text = document.getElementById("text-display").value;
 
-      let doc = new jsPDF();
+    let doc = new jsPDF();
 
-      var y = 7;
-      var x = 3;
-      var textA = text.split("");
-      var str1 = document.getElementById('text-display');
-      var str2 = str1.style.fontFamily;
-      console.log(str1, str2);
-      console.log(textA);
-      for (var i = 0; i < textA.length; i++) {
-        if (y > 250) {
-          y = 5;
-          doc.addPage();
-        }
-        if (x > 200) {
-          x = 3;
-          y += 7;
-        }
-        doc.text(x, y, textA[i]);
-        x += 4;
+    var y = 7;
+    var x = 3;
+    var textA = text.split("");
+    var str1 = document.getElementById('text-display');
+    var str2 = str1.style.fontFamily;
+    console.log(str1, str2);
+    console.log(textA);
+    for (var i = 0; i < textA.length; i++) {
+      if (y > 250) {
+        y = 5;
+        doc.addPage();
       }
-          doc.save('html.pdf');
-    });
+      if (x > 200) {
+        x = 3;
+        y += 7;
+      }
+      doc.text(x, y, textA[i]);
+      x += 4;
+    }
+    doc.save('html.pdf');
+  });
 
   document.getElementById('js-upload-files').addEventListener('change', getFile);
 
@@ -134,29 +134,32 @@ $(document).ready(function () {
 
     /* function for clicking the play button */
     function onClickPlay() {
-      if(!flag){
+      if (!flag) {
         flag = true;
         utterance = new SpeechSynthesisUtterance(
-              document.getElementById('text-display').value);
+          document.getElementById('text-display').value);
         utterance.voice = synth.getVoices()[0];
-        utterance.onend = function(){
-            flag = false;
+        utterance.onend = function() {
+          flag = false;
         };
         synth.speak(utterance);
       }
-      if(synth.paused) { /* unpause/resume narration */
+      if (synth.paused) {
+        /* unpause/resume narration */
         synth.resume();
       }
     }
     /* function for clicking the pause button */
     function onClickPause() {
-      if(synth.speaking && !synth.paused){ /* pause narration */
+      if (synth.speaking && !synth.paused) {
+        /* pause narration */
         synth.pause();
       }
     }
     /* function for clicking the stop button */
     function onClickStop() {
-      if(synth.speaking){ /* stop narration */
+      if (synth.speaking) {
+        /* stop narration */
         /* for safari */
         flag = false;
         synth.cancel();
