@@ -24,6 +24,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
 
+
 	<title>Dsylexia Font Converter</title>
 	<link rel="stylesheet" href="./css/index.css">
 
@@ -32,8 +33,8 @@
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 		<!-- Brand Logo -->
-		<a class="navbar-brand" href="#">
-			<img src="./image/brandLogo.jpg" width="50" height="50" class="d-inline-block align-top" alt="Brand Logo">
+		<a class="navbar-brand" href="index.html">
+			<img src="./image/logoBig.png" width="200" height="60" class="d-inline-block align-top" alt="Brand Logo">
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 		 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,28 +47,18 @@
 
 				<!-- File Tab -->
 				<li class="nav-item">
-					<a class="nav-link" href="#">File <span class="sr-only">(current)</span></a>
-				</li>
-
-				<!-- About Tab -->
-				<li class="nav-item">
-					<a class="nav-link" href="#">About </a>
-				</li>
-
-				<!-- Acount Tab -->
-				<li class="nav-item">
-					<a class="nav-link" href="#">Account </a>
+					<a class="nav-link" href="about.html">About <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<h3>Upload a file from your computer</h3>
-		<!-- change fonts dropdown -->
-		<div class="btn-group">
-			<button type="button" class="btn btn-danger dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true"
-			 aria-expanded="false">
+	<div class="container">
+		<!-- change font-family dropdown -->
+		<h4>Change font</h4>
+		<div class="btn-group btn-xs">
+			<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+			 id="dropDownFont">
 				Fonts
 			</button>
 			<div class="dropdown-menu">
@@ -81,13 +72,17 @@
 				<button id='change-helvetica-btn' class="dropdown-item" type="button">Helvetica</button>
 				<button id='change-verdana-btn' class="dropdown-item" type="button">Verdana</button>
 			</div>
+			<!-- Change font size -->
+			<form class="form-inline border border-secondary m-1 bg-light">
+				<label>Font Size</label>
+				<input id="font-size-input" type="number" min="10" max="32" value="12">
+			</form>
 		</div>
+		<hr class="my-1">
+	</div>
 
-		<form class="form-inline">
-			<label>Font Size</label>
-			<input id="font-size-input" type="number" min="10" max="32" value="12">
-		</form>
-
+	<div class="container">
+		<h4>Upload file</h4>
 		<div class="d-inline-block">
 			<form action="" method="post" enctype="multipart/form-data" id="js-upload-form" class="form-inline">
 				<!-- upload file button -->
@@ -97,23 +92,29 @@
 					</div>
 				</div>
 				<!-- download button -->
-				<div>
+				<div class="m-1">
 					<a id="button1" href="" download="YourConvertedFile.txt">
 						<button type="button" class="btn btn-sm btn-primary">Download</button>
 					</a>
 				</div>
-				<h5>Use text to speech</h5>
-				<button type="button" name="play" id="play" class="btn btn-success">Play</button>
-				<button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
 			</form>
 		</div>
-
-		<!-- text area -->
-		<hr class="my-4">
-		<div class="container">
-			<textarea id="text-display" class="form-control" rows="20">Copy and paste, upload, or drag and drop files for font conversion.</textarea>
-		</div>
+		<hr class="my-1">
 	</div>
+
+	<!-- text to speech -->
+	<div class="container">
+		<h4>Use text to speech</h4>
+		<button type="button" name="play" id="play" class="btn btn-success">Play</button>
+		<button type="button" name="stop" id="stop" class="btn btn-danger">Stop</button>
+	</div>
+
+	<!-- text area -->
+	<div class="container">
+		<hr class="my-4">
+		<textarea id="text-display" class="form-control" rows="20">Copy and paste, upload, or drag and drop files for font conversion.</textarea>
+	</div>
+
 	<!-- JS for font converting function -->
 	<script src="js/change-font.js"></script>
 
